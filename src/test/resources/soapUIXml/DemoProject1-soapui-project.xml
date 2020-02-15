@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="313519ae-3236-41ef-9563-3e929b7bb0f3" activeEnvironment="Default" name="DemoProject1"
+                    resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:interface xsi:type="con:RestService" id="f0a3af63-cb22-4566-811a-769843e28557"
+                   wadlVersion="http://wadl.dev.java.net/2009/02" name="http://dummy.restapiexample.com" type="rest"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>http://dummy.restapiexample.com</con:endpoint>
+        </con:endpoints>
+        <con:resource name="Employees" path="/api/v1/employees" id="85006083-9884-49ad-b3b5-b38baf058f5e">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="Employees 1" id="ddec82fb-fa48-4410-9bfe-57ae3cbfa7fd" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json;charset=utf-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:emp="http://dummy.restapiexample.com/api/v1/employees">emp:Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="aaf993a5-be90-402e-ba64-60487201881a" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://dummy.restapiexample.com</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://dummy.restapiexample.com/api/v1/employees</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:testSuite id="58643142-b1c4-4d2d-8ce1-e525c06815a4" name="EmployeesTestSuite">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="f55e2fcf-0e86-49c7-9c04-a308a477170b" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="Employees TestCase" searchProperties="true">
+            <con:description>TestCase generated for REST Resource [Employees] located at [/api/v1/employees]
+            </con:description>
+            <con:settings/>
+            <con:testStep type="restrequest" name="Request 1" id="2df722f9-eb8b-4e9d-b7d0-b3bf0e0c07c8">
+                <con:settings/>
+                <con:config service="http://dummy.restapiexample.com" resourcePath="/api/v1/employees"
+                            methodName="Employees 1" xsi:type="con:RestRequestStep"
+                            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Request 1" id="aaf993a5-be90-402e-ba64-60487201881a"
+                                     mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://dummy.restapiexample.com</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://dummy.restapiexample.com/api/v1/employees</con:originalUri>
+                        <con:assertion type="Valid HTTP Status Codes" id="c62b7a12-c559-476c-bd83-2c1fa724b512"
+                                       name="Valid HTTP Status Codes">
+                            <con:configuration>
+                                <codes>200</codes>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties/>
+    </con:testSuite>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+</con:soapui-project>
